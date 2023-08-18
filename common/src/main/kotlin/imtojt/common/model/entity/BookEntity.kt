@@ -33,6 +33,12 @@ data class BookEntity(
     @Column(name = "isbn", unique = true, nullable = false)
     var isbn: String,
 
+    @Column(name = "image_file_name")
+    var imageFileName: String? = null,
+
+    @Column(name = "description")
+    var description: String,
+
     @Column(name = "created_at", updatable = false)
     var createdAt: LocalDateTime? = null,
 

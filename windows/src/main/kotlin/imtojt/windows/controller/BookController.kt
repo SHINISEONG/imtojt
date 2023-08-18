@@ -25,7 +25,9 @@ class BookController(private  val bookService: BookService) {
             price = params["price"]?.toInt()!!,
             author = params["author"],
             publisher = params["publisher"],
-            isbn = params["isbn"]!!
+            isbn = params["isbn"]!!,
+            description = params["description"]!!,
+            imageFileName = params["imagefilename"]!!
         )
     }
 

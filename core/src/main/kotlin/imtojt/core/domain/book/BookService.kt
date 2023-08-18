@@ -15,7 +15,9 @@ class BookService(private val bookRepository: BookRepository) {
             price = bookDTO.price,
             author = bookDTO.author,
             publisher = bookDTO.publisher,
-            isbn = bookDTO.isbn
+            isbn = bookDTO.isbn,
+            description = bookDTO.description,
+            imageFileName = bookDTO.imageFileName
         )
         return bookRepository.save(bookEntity)
     }
