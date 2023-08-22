@@ -12,3 +12,18 @@ spring:
     hibernate:
       ddl-auto: update
     show-sql: true
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
+  web:
+    resources:
+      static-locations: classpath:/upload_images/
+  devtools:
+    livereload:
+      enabled: true
+    remote:
+      restart:
+        enabled: true
+
+fileUploadPath: upload_images/

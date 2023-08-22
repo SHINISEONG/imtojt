@@ -26,9 +26,13 @@ data class BookDTO(
 
     @ApiModelProperty(value = "image file name", example = "abc.jpg")
     @JsonProperty("IMAGE_FILE_NAME")
-    val imageFileName : String,
+    var imageFileName : String?,
 
     @ApiModelProperty(value = "description", example = "this book is good. and ... ~~~")
     @JsonProperty("DESCRIPTION")
-    val description : String
+    val description : String,
+
+    @ApiModelProperty(value = "stock", example = "3")
+    @JsonProperty("STOCK")
+    val stock : Int
 )

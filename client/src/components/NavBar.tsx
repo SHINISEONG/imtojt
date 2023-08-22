@@ -5,8 +5,12 @@ import Toolbar from '@mui/material/Toolbar';
 import IconButton from '@mui/material/IconButton';
 import Typography from '@mui/material/Typography';
 import InputBase from '@mui/material/InputBase';
-import MenuIcon from '@mui/icons-material/Menu';
+import AddIcon from '@mui/icons-material/Add';
 import SearchIcon from '@mui/icons-material/Search';
+import {Outlet} from 'react-router'
+import AddBookDrawer from "./AddBookDrawer.tsx";
+import {useCallback, useState} from "react";
+
 
 const Search = styled('div')(({ theme }) => ({
     position: 'relative',
@@ -50,7 +54,12 @@ const StyledInputBase = styled(InputBase)(({ theme }) => ({
     },
 }));
 
-export default function SearchAppBar() {
+export default function NavBar() {
+    const [open, setOpen] = useState(false)
+    const toggleDrawer = useCallback(   (openState: boolean) => {
+        setOpen(openState)
+    },[]);
+
     return (
         <Box sx={{ flexGrow: 1 }}>
             <AppBar position="static">
@@ -61,8 +70,9 @@ export default function SearchAppBar() {
                         color="inherit"
                         aria-label="open drawer"
                         sx={{ mr: 2 }}
+                        onClick={() => toggleDrawer(true)}
                     >
-                        <MenuIcon />
+                        <AddIcon />
                     </IconButton>
                     <Typography
                         variant="h6"
@@ -83,6 +93,8 @@ export default function SearchAppBar() {
                     </Search>
                 </Toolbar>
             </AppBar>
+            <AddBookDrawer open={open} toggleDrawer = {toggleDrawer} />
+            <Outlet />
         </Box>
     );
 }

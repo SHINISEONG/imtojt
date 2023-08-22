@@ -11,4 +11,5 @@ dependencies {
     api(project(":core"))
     implementation("org.springframework.boot:spring-boot-starter-web")
     implementation("com.h2database:h2")
+    developmentOnly("org.springframework.boot:spring-boot-devtools")
 }

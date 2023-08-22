@@ -39,6 +39,9 @@ data class BookEntity(
     @Column(name = "description")
     var description: String,
 
+    @Column(name = "stock")
+    var stock: Int,
+
     @Column(name = "created_at", updatable = false)
     var createdAt: LocalDateTime? = null,
 
