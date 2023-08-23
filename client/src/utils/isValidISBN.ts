@@ -14,7 +14,7 @@ export const isValidISBN10 = (isbn: string): boolean => {
 };
 
 export const isValidISBN13 = (isbn: string): boolean => {
-    isbn = isbn.replace(/-/g,'')
+    isbn.replace('-','')
     console.log(isbn)
     if (!/^\d{13}$/.test(isbn)) {
         return false;
